@@ -10,4 +10,4 @@ Define a struct Prison that includes:
 Define the following functions:
 	- Given a Prison output the name of the prison and then all the information about
 	the prisoners in it.
-	- Create a function and sort the prisoners in ascending order.
+	- Create a function and sort the prisoners in ascending order by the time they have left to serve.
