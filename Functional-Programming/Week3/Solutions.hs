@@ -23,8 +23,13 @@ countOccurrences number digit
  | mod number 10 == digit = 1 + countOccurrences (div number 10) digit
  | otherwise = countOccurrences (div number 10) digit
  
-{- 
-type Cylinder = (Double, Double)
-getVolume :: [Cylinder] -> Double
-getVolume list = [pi * r * r * h | r <- fst (head list)]
--}
+type Radius = Int
+type Height = Int 
+type Cylinder = (Radius, Height)
+type AllCyl = [Cylinder]
+getVolume :: AllCyl -> [Double]
+getVolume [] = []
+getVolume ((r, h):xs) = (pi * (fromIntegral)r * fromIntegral r * fromIntegral h ):(getVolume xs)
+
+--getVolume [list] = [(pi * r * r * h) | r <- fst list, h <- snd list]
+--getVolume [list] = [(pi * fst list * fst list * snd list)]
