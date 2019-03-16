@@ -30,6 +30,3 @@ type AllCyl = [Cylinder]
 getVolume :: AllCyl -> [Double]
 getVolume [] = []
 getVolume ((r, h):xs) = (pi * (fromIntegral)r * fromIntegral r * fromIntegral h ):(getVolume xs)
-
---getVolume [list] = [(pi * r * r * h) | r <- fst list, h <- snd list]
---getVolume [list] = [(pi * fst list * fst list * snd list)]
