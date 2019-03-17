@@ -155,115 +155,114 @@ private:
 int main()
 
 {
-
+	char proceed = 'x';
 	Student students[MAX_STUDENTS];
 
 	size_t size = 0;
 
-
-
 	do
-
 	{
+		do
 
-		std::cout << "How many students? ";
+		{
 
-		std::cin >> size;
+			std::cout << "How many students? ";
 
-	} while (size <= 0);
+			std::cin >> size;
 
-
-
-	std::cout << std::endl;
-
+		} while (size <= 0);
 
 
-	for (size_t i = 0; i < size; ++i)
-
-	{
-
-		std::cout << "Student " << i + 1 << ":" << std::endl;
-
-		std::cout << " " << std::setw(INPUT_SPACE) << "Enter faculty number: ";
-
-		students[i].setFN(); //<-- why tho
-
-		std::cout << " " << std::setw(INPUT_SPACE) << "Enter student's name: ";
-
-		students[i].setName();
-
-		students[i].setGrades();
 
 		std::cout << std::endl;
 
-	}
+
+
+		for (size_t i = 0; i < size; ++i)
+
+		{
+
+			std::cout << "Student " << i + 1 << ":" << std::endl;
+
+			std::cout << " " << std::setw(INPUT_SPACE) << "Enter faculty number: ";
+
+			students[i].setFN(); //<-- why tho
+
+			std::cout << " " << std::setw(INPUT_SPACE) << "Enter student's name: ";
+
+			students[i].setName();
+
+			students[i].setGrades();
+
+			std::cout << std::endl;
+
+		}
 
 
 
-	std::cout << "Your table:" << std::endl;
+		std::cout << "Your table:" << std::endl;
 
-	students->printTable();
-
-	std::cout << std::endl;
-
-
-
-	for (size_t i = 0; i < size; ++i)
-
-	{
-
-		std::cout << students[i].getFN();
-
-		std::cout << std::setw(35);
-
-		std::left;
-
-		std::cout << students[i].getName();
-
-		std::cout << std::setw(WIDTH_TABLE);
-
-		students[i].getGrades();
-
-		std::cout << std::endl;
-
-	}
-
-
-
-	std::cout << "Sorted table:" << std::endl;
-
-	students->printTable();
-
-	std::cout << std::setw(WIDTH_TABLE) << "Average";
-
-	std::cout << std::endl;
-
-
-
-	for (size_t i = 0; i < size; ++i)
-
-	{
-
-		std::cout << students[i].getFN();
-
-		std::cout << std::setw(35);
-
-		std::cout << students[i].getName();
-
-		std::cout << std::setw(WIDTH_TABLE);
-
-		students[i].getGrades();
-
-		std::cout << std::setw(WIDTH_TABLE);
-
-		std::cout << std::setprecision(2) << std::fixed << students[i].average();
+		students->printTable();
 
 		std::cout << std::endl;
 
-	}
 
 
+		for (size_t i = 0; i < size; ++i)
+
+		{
+
+			std::cout << students[i].getFN();
+
+			std::cout << std::setw(35);
+
+			std::cout << students[i].getName();
+
+			std::cout << std::setw(WIDTH_TABLE);
+
+			students[i].getGrades();
+
+			std::cout << std::endl;
+
+		}
+
+
+
+		std::cout << "Sorted table:" << std::endl;
+
+		students->printTable();
+
+		std::cout << std::setw(WIDTH_TABLE) << "Average";
+
+		std::cout << std::endl;
+
+
+
+		for (size_t i = 0; i < size; ++i)
+
+		{
+
+			std::cout << students[i].getFN();
+
+			std::cout << std::setw(35);
+
+			std::cout << students[i].getName();
+
+			std::cout << std::setw(WIDTH_TABLE);
+
+			students[i].getGrades();
+
+			std::cout << std::setw(WIDTH_TABLE);
+
+			std::cout << std::setprecision(2) << std::fixed << students[i].average();
+
+			std::cout << std::endl;
+
+		}
+
+		std::cout << "Again? (Y/N) ";
+		std::cin >> proceed;
+	} while (proceed == 'Y' || proceed == 'y');
 
 	return 0;
-
 }
