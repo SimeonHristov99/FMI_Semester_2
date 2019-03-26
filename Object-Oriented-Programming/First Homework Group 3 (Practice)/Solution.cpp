@@ -1,12 +1,3 @@
-// Major: Information Systems
-// Group: 3
-// Faculty number: 71845
-// Name: Simeon Hristov
-
-//DISCLAIMER: Sorry if it is a bit too long :D
-
-//Program works best if you follow the 'tutorial'!
-
 #include "pch.h"
 #include <iostream>
 
