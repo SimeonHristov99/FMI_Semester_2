@@ -1,16 +1,8 @@
 #include "pch.h"
 #include <iostream>
 
-#include "HelperFunctions.hpp"
+#include "Function.hpp"
 #include "Stack.hpp"
-
-size_t getSizeStr(const char* str)
-{
-	if (str[0] == '\0')
-		return 1;
-
-	return 1 + getSizeStr(str + 1);
-}
 
 void simplify(char* str)
 {

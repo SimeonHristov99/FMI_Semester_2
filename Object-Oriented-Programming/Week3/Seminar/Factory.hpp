@@ -15,7 +15,6 @@ class Factory
 	void del();
 
 public:
-	// Cannonical Representation
 	Factory(const char*);
 	Factory(const char*, Employee*, size_t staffSize);
 	Factory(const Factory& other);
