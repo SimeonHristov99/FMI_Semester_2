@@ -39,3 +39,30 @@ getOddCompositionValue :: [(Int -> Int)] -> Int -> Int
 getOddCompositionValue [] number = number
 getOddCompositionValue [f] number = f number
 getOddCompositionValue (x1:x2:others) number = (getOddCompositionValue others . x1) number
+
+-- Task 5
+
+{- Sample test case:
+minDepthGreenNode (Node Red Empty (Node Red Empty (Node Blue (Node Red Empty Empty) Empty) (Node Green Empty Empty))(Node Green Empty Empty))
+-}
+
+data Color = Red | Green | Blue
+ deriving (Read, Show, Eq)
+
+data Tree = Empty | Node Color Tree Tree
+
+minDepthGreenNode :: Tree -> Int
+minDepthGreenNode Empty = 0
+minDepthGreenNode (Node colour lt rt)
+ | colour == Green = 1
+ | otherwise            = 1 + min (minDepthGreenNode lt) (minDepthGreenNode rt)
+ 
+-- Task 6
+
+{- Sample test case:
+minDepthGreenNode (Node Red Empty (Node Red Empty (Node Blue (Node Red Empty Empty) Empty) (Node Green Empty Empty))(Node Green Empty Empty))
+
+
+maxDepthBlueNode :: Tree -> Int
+maxDepthBlueNode Empty = 0
+maxDepthBlueNode (Node colour Empty Empty)-}
