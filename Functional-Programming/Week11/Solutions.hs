@@ -75,4 +75,3 @@ simplePaths :: Graph2 -> Int -> Node -> [Path]
 simplePaths graph size node
  | length (head (allPaths node graph)) == (size - 1) = allPaths node graph
  | otherwise = map (\x -> node : x) (findPathsSuccessors node graph)
- 
